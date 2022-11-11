@@ -1,10 +1,13 @@
 package com.suyu.toolbox.utils;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 
 @TableName("user")  // 可以指定哪张表
 public class user {
-    private Integer id;
+    @TableId(value = "id", type = IdType.AUTO)  // 设置自增 解决插入数据 id为负数的情况
+    private  Integer id;
     private  String username;
     private  String password;
 
